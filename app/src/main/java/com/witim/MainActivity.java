@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
         bar = getSupportActionBar();
         bar.hide();
-        bar.setSubtitle("Data Mahasiswa");
+        bar.setSubtitle("witim");
         FragmentProject fragmentProject = new FragmentProject();
         FragmentTransaction ftProject = getSupportFragmentManager().beginTransaction();
         ftProject.replace(R.id.mainFrame, fragmentProject, "Project" );

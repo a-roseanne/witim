@@ -10,4 +10,8 @@
     <color name="cardDarkYellow">#FBD671</color>
     <color name="cardYellow">#FFEDBD</color>
     <color name="cardBorder">#A1ECE9</color>
+
+
+    <color name="activeTab">#238581</color>
+    <color name="Tab">#95C2C0</color>
 </resources>
