@@ -55,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
                         ftChat.replace(R.id.mainFrame, fragmentChat, "Chat" );
                         ftChat.commit();
                         return true;
+
                     case R.id.navigation_profile:
                         FragmentProfile fragmentProfile = new FragmentProfile();
                         FragmentTransaction ftProfile = getSupportFragmentManager().beginTransaction();
