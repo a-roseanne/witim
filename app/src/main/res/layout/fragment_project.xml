@@ -1,16 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".FragmentProject">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:id="@+id/fragmentProject"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_project"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#FF9800"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:background="@color/topTabBar"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/project_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/title_proj"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/tablayout_project"
+        app:layout_constraintEnd_toEndOf="@+id/toolbar_project"
+        app:layout_constraintStart_toStartOf="@+id/toolbar_project"
+        app:layout_constraintTop_toTopOf="@+id/toolbar_project" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tablayout_project"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/topTabBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_project"
+        app:tabIndicatorAnimationDuration="300"
+        app:tabIndicatorHeight="@android:dimen/notification_large_icon_height"
+        app:tabSelectedTextColor="@color/activeTab" />
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewpager_project"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorAccent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tablayout_project" />
+
+
+    <!--    <FrameLayout-->
+    <!--        android:id="@+id/project_frame"-->
+    <!--        android:layout_width="0dp"-->
+    <!--        android:layout_height="0dp"-->
+    <!--        android:background="@color/colorAccent"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/tabproject">-->
+
+    <!--    </FrameLayout>-->
+</androidx.constraintlayout.widget.ConstraintLayout>

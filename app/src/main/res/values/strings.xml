@@ -8,6 +8,8 @@
     <string name="title_find">Find</string>
     <string name="title_chat">Chat</string>
     <string name="title_profile">Profile</string>
+    <string name="text_project_ongoing">On-Progress</string>
+    <string name="text_project_finished">Finished</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
