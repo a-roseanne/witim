@@ -11,8 +11,14 @@
     <color name="cardYellow">#FFEDBD</color>
     <color name="cardBorder">#A1ECE9</color>
 
+    <color name="grey">#3D4241</color>
 
     <color name="activeTab">#238581</color>
     <color name="Tab">#95C2C0</color>
     <color name="topTabBar">#FFFFFF</color>
+
+    <color name="grad_start">#238581</color>
+    <color name="grad_end">#95C2C0</color>
+
+
 </resources>
