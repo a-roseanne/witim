@@ -30,7 +30,6 @@ public class IntroActivity extends AppCompatActivity {
 
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-
 //        if (restorePrefData()){
 //            Intent mainActivity = new Intent(getApplicationContext(),MainActivity.class);
 //            startActivity(mainActivity);
@@ -75,6 +74,11 @@ public class IntroActivity extends AppCompatActivity {
             public void onTabSelected(TabLayout.Tab tab) {
                 if (tab.getPosition() == mList.size() - 1){
                     loadLastScreen();
+                }else{
+                    btnNext.setVisibility(View.VISIBLE);
+                    btnSkip.setVisibility(View.VISIBLE);
+                    btnGetStarted.setVisibility(View.INVISIBLE);
+                    tabIndicator.setVisibility(View.VISIBLE);
                 }
             }
 
