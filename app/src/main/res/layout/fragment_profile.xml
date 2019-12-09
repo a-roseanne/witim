@@ -12,6 +12,7 @@
         android:background="@drawable/background_gradient"
         android:orientation="vertical">
 
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="320dp"
@@ -21,6 +22,7 @@
 
 
             <TextView
+                android:id="@+id/profile_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="50px"
@@ -70,6 +72,18 @@
                     app:layout_constraintEnd_toEndOf="@+id/name"
                     app:layout_constraintStart_toStartOf="@+id/name"
                     app:layout_constraintTop_toBottomOf="@+id/name" />
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="32dp"
+
+                    android:background="@color/design_default_color_background"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/ic_edit_black_24dp"
+                    app:layout_constraintBottom_toTopOf="@+id/projects"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/role" />
 
                 <TextView
                     android:id="@+id/teams"
@@ -124,6 +138,7 @@
                     app:layout_constraintBottom_toBottomOf="@+id/teams"
                     app:layout_constraintStart_toEndOf="@+id/teams"
                     app:layout_constraintTop_toTopOf="@+id/teams" />
+
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </LinearLayout>
@@ -140,20 +155,72 @@
 
         </TextView>
 
-        <RelativeLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <androidx.viewpager.widget.ViewPager
-                android:foregroundGravity="center"
-                android:id="@+id/viewPager"
-                android:layout_centerInParent="true"
-                android:overScrollMode="never"
-                android:clipToPadding="false"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
 
-        </RelativeLayout>
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_add"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:backgroundTint="@color/cardview_light_background"
+                android:src="@drawable/ic_add_black_24dp"
+                android:translationZ="2dp"
+                app:layout_constraintBottom_toBottomOf="@+id/horizontalScrollView"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_gravity="end|bottom"
+                app:fabSize="normal"
+                app:borderWidth="0dp"
+                app:elevation="6dp"
+                />
+
+            <HorizontalScrollView
+                android:id="@+id/horizontalScrollView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="200dp"
+                        android:layout_height="200dp"
+                        android:layout_margin="20dp"
+                        android:src="@drawable/portfolio">
+
+                    </ImageView>
+
+                    <ImageView
+                        android:layout_width="200dp"
+                        android:layout_height="200dp"
+                        android:layout_margin="20dp"
+                        android:src="@drawable/portfolio">
+
+                    </ImageView>
+
+                    <ImageView
+                        android:layout_width="200dp"
+                        android:layout_height="200dp"
+                        android:layout_margin="20dp"
+                        android:src="@drawable/portfolio">
+
+                    </ImageView>
+
+
+                </LinearLayout>
+            </HorizontalScrollView>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </LinearLayout>
 

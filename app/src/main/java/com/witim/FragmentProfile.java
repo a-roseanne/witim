@@ -4,6 +4,8 @@ package com.witim;
 import android.animation.ArgbEvaluator;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
@@ -13,6 +15,9 @@ import android.view.ViewGroup;
 
 import java.util.ArrayList;
 import java.util.List;
+import android.widget.Toast;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 
 /**
@@ -35,16 +40,11 @@ public class FragmentProfile extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        models = new ArrayList<>();
-        models.add(new Model(R.drawable.portfolio));
-        models.add(new Model(R.drawable.portfolio));
-        models.add(new Model(R.drawable.portfolio));
-
-
 
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile, container, false);
-
+        final View view = inflater.inflate(R.layout.fragment_profile, container, false);
+        return view;
     }
+
 
 }
