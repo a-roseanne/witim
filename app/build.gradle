@@ -8,6 +8,7 @@ android {
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
+        android.defaultConfig.vectorDrawables.useSupportLibrary = true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -38,4 +39,6 @@ dependencies {
     implementation 'com.github.bumptech.glide:glide:3.7.0'
     //buat load data foto yang ada di database
     implementation 'com.loopj.android:android-async-http:1.4.9'
+    implementation 'androidx.vectordrawable:vectordrawable:1.1.0'
+
 }

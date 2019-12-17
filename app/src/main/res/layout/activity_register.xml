@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    tools:context=".RegisterActivity">
+
+    <ImageView
+        android:id="@+id/iv_gradBg"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/btn_gradient_style" />
+
+    <EditText
+        android:id="@+id/edtText_Username3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="64dp"
+        android:background="@null"
+        android:ems="10"
+        android:hint="@string/editTxt_role"
+        android:inputType="textPersonName"
+        android:textColor="#F7F2F2"
+        android:textColorHint="#FFFFFF"
+        android:textCursorDrawable="@drawable/edit_txt_white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtText_ConfirmPass" />
+
+    <EditText
+        android:id="@+id/edtText_Email"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="64dp"
+        android:background="@null"
+        android:ems="10"
+        android:hint="@string/editTxt_email"
+        android:inputType="textEmailAddress"
+        android:textColor="#F7F2F2"
+        android:textColorHint="#FFFFFF"
+        android:textCursorDrawable="@drawable/edit_txt_white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtText_Username" />
+
+    <EditText
+        android:id="@+id/edtText_Password"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="64dp"
+        android:background="@null"
+        android:ems="10"
+        android:hint="@string/editTxt_Password"
+        android:inputType="textPassword"
+        android:textColor="#F7F2F2"
+        android:textColorHint="#FFFFFF"
+        android:textCursorDrawable="@drawable/edit_txt_white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtText_Email" />
+
+    <EditText
+        android:id="@+id/edtText_ConfirmPass"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="64dp"
+        android:background="@null"
+        android:ems="10"
+        android:hint="@string/editTxt_Confirm"
+        android:inputType="textPassword"
+        android:textColor="#F7F2F2"
+        android:textColorHint="#FFFFFF"
+        android:textCursorDrawable="@drawable/edit_txt_white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtText_Password" />
+
+    <EditText
+        android:id="@+id/edtText_Username"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="64dp"
+        android:background="@null"
+        android:ems="10"
+        android:hint="@string/editTxt_username"
+        android:inputType="textPersonName"
+        android:textColor="#F7F2F2"
+        android:textColorHint="#FFFFFF"
+        android:textCursorDrawable="@drawable/edit_txt_white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="64dp"
+        android:background="@drawable/btn_rounded"
+        android:text="@string/btn_reg"
+        android:textAllCaps="false"
+        android:textColor="@color/colorPrimaryDark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtText_Username3" />
+
+    <TextView
+        android:id="@+id/txtLogin"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/login"
+        android:textAlignment="center"
+        android:textColor="@color/topTabBar"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.614"
+        app:layout_constraintStart_toStartOf="@+id/iv_gradBg"
+        app:layout_constraintTop_toBottomOf="@+id/button" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
