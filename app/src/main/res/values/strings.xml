@@ -17,4 +17,13 @@
     <string name="btn_skip">Skip</string>
     <string name="txt_wlc">Welcome to witim</string>
     <string name="btn_start">Get Started</string>
+    <string name="btn_login">Login</string>
+    <string name="btn_reg">Register</string>
+    <string name="frgt">Forgot Password?</string>
+    <string name="editTxt_username">Full Name</string>
+    <string name="editTxt_email">Email</string>
+    <string name="editTxt_Password">Password</string>
+    <string name="editTxt_Confirm">Confirm Password</string>
+    <string name="editTxt_role">Choose Your Role</string>
+    <string name="login">Already have an account? Login</string>
 </resources>
