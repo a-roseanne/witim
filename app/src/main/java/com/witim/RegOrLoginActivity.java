@@ -33,12 +33,5 @@ public class RegOrLoginActivity extends AppCompatActivity {
             }
         });
 
-        login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent registerI = new Intent(getApplicationContext(),LoginActivity.class);
-                startActivity(registerI);
-            }
-        });
     }
 }
