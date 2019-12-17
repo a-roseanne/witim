@@ -34,6 +34,11 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
     implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'com.android.support:multidex:1.0.1' //buat nambahin space memory
+    implementation 'com.android.volley:volley:1.1.1'
+    implementation 'com.github.bumptech.glide:glide:3.7.0'
+    //buat load data foto yang ada di database
+    implementation 'com.loopj.android:android-async-http:1.4.9'
     implementation 'androidx.vectordrawable:vectordrawable:1.1.0'
 
 }
