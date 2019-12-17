@@ -17,4 +17,11 @@
     <string name="btn_skip">Skip</string>
     <string name="txt_wlc">Welcome to witim</string>
     <string name="btn_start">Get Started</string>
+
+    <string-array name="roles">
+
+        <item>Hipster</item>
+        <item>Hacker</item>
+        <item>Hustler</item>
+    </string-array>
 </resources>
