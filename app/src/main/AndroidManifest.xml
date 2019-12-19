@@ -12,8 +12,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LoginActivity"></activity>
-        <activity android:name=".RegisterActivity" android:parentActivityName=".RegOrLoginActivity"/>
+        <activity android:name=".activity_login"></activity>
+        <activity android:name=".registerRole" />
+        <activity
+            android:name=".RegisterActivity"
+            android:parentActivityName=".RegOrLoginActivity" />
         <activity android:name=".RegOrLoginActivity" />
         <activity
             android:name=".IntroActivity"
