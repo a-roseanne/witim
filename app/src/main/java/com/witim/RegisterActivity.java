@@ -4,11 +4,11 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -27,10 +27,10 @@ import java.util.Map;
 
 public class RegisterActivity extends AppCompatActivity {
 
-    ActionBar bar;
-    EditText edt_name,edt_email, edt_pass, edt_cpass;
-    String name,email, pass, cpass;
-    Button btn_reg;
+    private ActionBar bar;
+    private EditText edt_name,edt_email, edt_pass, edt_cpass;
+    private String name="",email="", pass="", cpass="";
+    private Button btn_reg;
     private ProgressBar pgBar;
     private static String urlReg = "https://witim.000webhostapp.com/webservice/register.php";
 
@@ -43,8 +43,8 @@ public class RegisterActivity extends AppCompatActivity {
         bar.setDisplayHomeAsUpEnabled(true);
 
         btn_reg = findViewById(R.id.btn_reg);
-        pgBar = findViewById(R.id.progressBar);
-        edt_name = findViewById(R.id.editName);
+        pgBar = findViewById(R.id.pgBar);
+        edt_name = findViewById(R.id.edtText_name);
         edt_email = findViewById(R.id.edtText_Email);
         edt_pass = findViewById(R.id.edtText_Password);
         edt_cpass = findViewById(R.id.edtText_ConfirmPass);
@@ -52,18 +52,23 @@ public class RegisterActivity extends AppCompatActivity {
         btn_reg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                reg();
+                pgBar.setVisibility(View.VISIBLE);
+                btn_reg.setVisibility(View.INVISIBLE);
+
+                name = edt_name.getText().toString().trim();
+                email= edt_email.getText().toString().trim();
+                pass = edt_pass.getText().toString().trim();
+                if (TextUtils.isEmpty(name) || TextUtils.isEmpty(email) || TextUtils.isEmpty(pass)){
+                    Toast.makeText(RegisterActivity.this, "Please fill all fields", Toast.LENGTH_LONG).show();
+                }else{
+                    reg();
+                }
             }
         });
     }
 
     private void reg(){
-        pgBar.setVisibility(View.VISIBLE);
-        btn_reg.setVisibility(View.INVISIBLE);
 
-        final String name = edt_name.getText().toString().trim();
-        final String email= edt_email.getText().toString().trim();
-        final String pass = edt_pass.getText().toString().trim();
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, urlReg,
                 new Response.Listener<String>() {
@@ -73,12 +78,12 @@ public class RegisterActivity extends AppCompatActivity {
                         JSONObject jsonObject = new JSONObject(response);
                         String success = jsonObject.getString("success");
                         if(success.equals("1")){
-                            Toast.makeText(RegisterActivity.this, "Register Success!", Toast.LENGTH_SHORT);
+                            Toast.makeText(RegisterActivity.this, "Register Success!", Toast.LENGTH_SHORT).show();
                         }
 
                     }catch (JSONException e){
                         e.printStackTrace();
-                        Toast.makeText(RegisterActivity.this, "Register Failed! " + e.toString(), Toast.LENGTH_SHORT);
+                        Toast.makeText(RegisterActivity.this, "Register Failed! " + e.toString(), Toast.LENGTH_SHORT).show();
                         pgBar.setVisibility(View.INVISIBLE);
                         btn_reg.setVisibility(View.VISIBLE);
                     }
@@ -87,7 +92,7 @@ public class RegisterActivity extends AppCompatActivity {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(RegisterActivity.this, "Register Failed! " + error.toString(), Toast.LENGTH_SHORT);
+                        Toast.makeText(RegisterActivity.this, "Register Failed! " + error.toString(), Toast.LENGTH_SHORT).show();
                         pgBar.setVisibility(View.INVISIBLE);
                         btn_reg.setVisibility(View.VISIBLE);
 

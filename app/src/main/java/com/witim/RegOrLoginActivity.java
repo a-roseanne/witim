@@ -23,13 +23,21 @@ public class RegOrLoginActivity extends AppCompatActivity {
         bar.hide();
 
         register = findViewById(R.id.btn_register);
-        login = findViewById(R.id.btn_login);
+        login = findViewById(R.id.btn_reg);
 
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent registerI = new Intent(getApplicationContext(),RegisterActivity.class);
                 startActivity(registerI);
+            }
+        });
+
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent loginI = new Intent(getApplicationContext(),activity_login.class);
+                startActivity(loginI);
             }
         });
 
