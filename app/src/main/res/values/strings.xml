@@ -18,6 +18,7 @@
     <string name="txt_wlc">Welcome to witim</string>
     <string name="btn_start">Get Started</string>
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     <string-array name="roles">
 
@@ -34,6 +35,8 @@
     <string name="editTxt_Confirm">Confirm Password</string>
     <string name="editTxt_role">Choose Your Role</string>
     <string name="login">Already have an account? Login</string>
+=======
+>>>>>>> parent of eb85119... NAME AND ROLE CHANGING YEAH
 =======
 >>>>>>> parent of eb85119... NAME AND ROLE CHANGING YEAH
 </resources>

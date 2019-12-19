@@ -150,7 +150,11 @@
                                   <option name="values">
                                     <map>
 <<<<<<< HEAD
+<<<<<<< HEAD
                                       <entry key="url" value="jar:file:/E:/Android%20Studio/plugins/android/lib/android.jar!/images/material_design_icons/navigation/ic_close_black_24dp.xml" />
+=======
+                                      <entry key="url" value="jar:file:/E:/Android%20Studio/plugins/android/lib/android.jar!/images/material_design_icons/content/ic_add_black_24dp.xml" />
+>>>>>>> parent of eb85119... NAME AND ROLE CHANGING YEAH
 =======
                                       <entry key="url" value="jar:file:/E:/Android%20Studio/plugins/android/lib/android.jar!/images/material_design_icons/content/ic_add_black_24dp.xml" />
 >>>>>>> parent of eb85119... NAME AND ROLE CHANGING YEAH
@@ -165,7 +169,11 @@
                           <map>
                             <entry key="color" value="238581" />
 <<<<<<< HEAD
+<<<<<<< HEAD
                             <entry key="outputName" value="ic_close_black_24dp" />
+=======
+                            <entry key="outputName" value="ic_add_black_24dp" />
+>>>>>>> parent of eb85119... NAME AND ROLE CHANGING YEAH
 =======
                             <entry key="outputName" value="ic_add_black_24dp" />
 >>>>>>> parent of eb85119... NAME AND ROLE CHANGING YEAH

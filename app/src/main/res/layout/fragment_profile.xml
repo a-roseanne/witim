@@ -140,6 +140,7 @@
                     app:layout_constraintTop_toTopOf="@+id/teams" />
 
 <<<<<<< HEAD
+<<<<<<< HEAD
                 <EditText
                     android:id="@+id/editName"
                     android:layout_width="166dp"
@@ -174,6 +175,8 @@
                     tools:layout_editor_absoluteX="2dp"
                     tools:layout_editor_absoluteY="19dp" />
 
+=======
+>>>>>>> parent of eb85119... NAME AND ROLE CHANGING YEAH
 =======
 >>>>>>> parent of eb85119... NAME AND ROLE CHANGING YEAH
             </androidx.constraintlayout.widget.ConstraintLayout>

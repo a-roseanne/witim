@@ -12,6 +12,7 @@ import android.net.Uri;
 import android.os.Bundle;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 import android.os.Environment;
 import android.os.Handler;
 import android.provider.MediaStore;
@@ -20,6 +21,8 @@ import android.util.Log;
 import android.widget.AdapterView;
 import android.widget.Button;
 
+=======
+>>>>>>> parent of eb85119... NAME AND ROLE CHANGING YEAH
 =======
 >>>>>>> parent of eb85119... NAME AND ROLE CHANGING YEAH
 import androidx.annotation.NonNull;
@@ -40,12 +43,15 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+=======
+>>>>>>> parent of eb85119... NAME AND ROLE CHANGING YEAH
 =======
 >>>>>>> parent of eb85119... NAME AND ROLE CHANGING YEAH
 import android.widget.Toast;
@@ -56,6 +62,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 /**
  * A simple {@link Fragment} subclass.
  */
+<<<<<<< HEAD
 <<<<<<< HEAD
 public class FragmentProfile extends Fragment implements AdapterView.OnItemSelectedListener {
 
@@ -81,6 +88,10 @@ public class FragmentProfile extends Fragment implements AdapterView.OnItemSelec
 public class FragmentProfile extends Fragment {
 >>>>>>> parent of eb85119... NAME AND ROLE CHANGING YEAH
 
+=======
+public class FragmentProfile extends Fragment {
+
+>>>>>>> parent of eb85119... NAME AND ROLE CHANGING YEAH
     ViewPager viewPager;
     Adapter adapter;
     List<Model> models;
@@ -95,6 +106,7 @@ public class FragmentProfile extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+<<<<<<< HEAD
 <<<<<<< HEAD
         // Inflate the layout for this fragment
         final View view = inflater.inflate(R.layout.fragment_profile, container, false);
@@ -257,11 +269,16 @@ public class FragmentProfile extends Fragment {
 
 
 
+=======
+
+
+>>>>>>> parent of eb85119... NAME AND ROLE CHANGING YEAH
         // Inflate the layout for this fragment
         final View view = inflater.inflate(R.layout.fragment_profile, container, false);
         return view;
     }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     public void choosePhotoFromGallery() {
         Intent galleryIntent = new Intent(Intent.ACTION_PICK,
@@ -469,6 +486,9 @@ public class FragmentProfile extends Fragment {
     public void onNothingSelected(AdapterView<?> adapterView) {
 
     }
+=======
+
+>>>>>>> parent of eb85119... NAME AND ROLE CHANGING YEAH
 =======
 
 >>>>>>> parent of eb85119... NAME AND ROLE CHANGING YEAH
