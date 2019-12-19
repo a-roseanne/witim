@@ -1,5 +1,6 @@
 package com.witim;
 
+
 import android.animation.ArgbEvaluator;
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -10,6 +11,7 @@ import android.media.MediaScannerConnection;
 import android.net.Uri;
 import android.os.Bundle;
 
+<<<<<<< HEAD
 import android.os.Environment;
 import android.os.Handler;
 import android.provider.MediaStore;
@@ -18,6 +20,8 @@ import android.util.Log;
 import android.widget.AdapterView;
 import android.widget.Button;
 
+=======
+>>>>>>> parent of eb85119... NAME AND ROLE CHANGING YEAH
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
@@ -35,33 +39,16 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
+<<<<<<< HEAD
 
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+=======
+>>>>>>> parent of eb85119... NAME AND ROLE CHANGING YEAH
 import android.widget.Toast;
-import android.widget.Spinner;
-
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.widget.ArrayAdapter;
-
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.Volley;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -69,6 +56,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 /**
  * A simple {@link Fragment} subclass.
  */
+<<<<<<< HEAD
 public class FragmentProfile extends Fragment implements AdapterView.OnItemSelectedListener {
 
     ImageButton edit_btn, check_btn, cameraButton;
@@ -89,7 +77,15 @@ public class FragmentProfile extends Fragment implements AdapterView.OnItemSelec
     final static String TAG = "fragmentprofile";
 
     ProgressBar loading;
+=======
+public class FragmentProfile extends Fragment {
+>>>>>>> parent of eb85119... NAME AND ROLE CHANGING YEAH
 
+    ViewPager viewPager;
+    Adapter adapter;
+    List<Model> models;
+    Integer[] colors = null;
+    ArgbEvaluator argbEvaluator = new ArgbEvaluator();
 
     public FragmentProfile() {
         // Required empty public constructor
@@ -99,6 +95,7 @@ public class FragmentProfile extends Fragment implements AdapterView.OnItemSelec
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+<<<<<<< HEAD
         // Inflate the layout for this fragment
         final View view = inflater.inflate(R.layout.fragment_profile, container, false);
         pp = view.findViewById(R.id.pp);
@@ -215,6 +212,8 @@ public class FragmentProfile extends Fragment implements AdapterView.OnItemSelec
 
             }
         });
+=======
+>>>>>>> parent of eb85119... NAME AND ROLE CHANGING YEAH
 
         cameraButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -258,9 +257,12 @@ public class FragmentProfile extends Fragment implements AdapterView.OnItemSelec
 
 
 
+        // Inflate the layout for this fragment
+        final View view = inflater.inflate(R.layout.fragment_profile, container, false);
         return view;
     }
 
+<<<<<<< HEAD
     public void choosePhotoFromGallery() {
         Intent galleryIntent = new Intent(Intent.ACTION_PICK,
         android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
@@ -467,4 +469,7 @@ public class FragmentProfile extends Fragment implements AdapterView.OnItemSelec
     public void onNothingSelected(AdapterView<?> adapterView) {
 
     }
+=======
+
+>>>>>>> parent of eb85119... NAME AND ROLE CHANGING YEAH
 }
