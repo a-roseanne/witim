@@ -31,7 +31,7 @@ public class activity_login extends AppCompatActivity {
     private Button btn_login;
     private  String email, pass;
     private ProgressBar pgBar;
-    private static String url = "https://witim.000webhostapp.com/webservice/register.php";
+    private static String url = "https://witim.000webhostapp.com/webservice/login.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +40,7 @@ public class activity_login extends AppCompatActivity {
 
 et_email = findViewById(R.id.edtText_Email);
 et_pass = findViewById(R.id.edtText_Password);
-btn_login = findViewById(R.id.btn_reg);
+btn_login = findViewById(R.id.btn_login);
 pgBar = findViewById(R.id.pgBar);
 
 btn_login.setOnClickListener(new View.OnClickListener() {

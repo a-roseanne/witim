@@ -23,7 +23,7 @@ public class RegOrLoginActivity extends AppCompatActivity {
         bar.hide();
 
         register = findViewById(R.id.btn_register);
-        login = findViewById(R.id.btn_reg);
+        login = findViewById(R.id.btn_login);
 
         register.setOnClickListener(new View.OnClickListener() {
             @Override
