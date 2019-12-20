@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    tools:context=".registerRole">
+    <ImageButton
+        android:id="@+id/imgHu_def"
+        android:layout_width="100dp"
+        android:layout_height="230dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="64dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitXY"
+        app:layout_constraintStart_toEndOf="@+id/imgHa_def"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/hipster" />
+
+    <ImageButton
+        android:id="@+id/imgHa_def"
+        android:layout_width="100dp"
+        android:layout_height="230dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="64dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitXY"
+        app:layout_constraintStart_toEndOf="@+id/imgHi_def"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/hacker"/>
+
+    <ImageButton
+        android:id="@+id/imgHi_def"
+        android:layout_width="100dp"
+        android:layout_height="230dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="64dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitXY"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/hustler" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -33,4 +33,6 @@
     <string name="editTxt_Confirm">Confirm Password</string>
     <string name="editTxt_role">Choose Your Role</string>
     <string name="login">Already have an account? Login</string>
+    <string name="forgot">Forgot Password?</string>
+    <string name="register">Don\'t have an account? Register</string>
 </resources>
