@@ -18,29 +18,27 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Find"
-        android:textColor="@color/cardBlue"
+        android:textColor="@color/topTabBar"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar2"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/toolbar2"
         app:layout_constraintStart_toStartOf="@+id/toolbar2"
         app:layout_constraintTop_toTopOf="@+id/toolbar2" />
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cv_card_find"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_find"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_marginStart="0dp"
-        android:layout_marginEnd="0dp"
-        app:cardBackgroundColor="@color/cardview_light_background"
-        app:cardCornerRadius="25dp"
-        app:cardElevation="20dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
+
         app:layout_constraintTop_toBottomOf="@+id/toolbar2"
         android:layout_marginLeft="0dp"
         android:layout_marginRight="0dp"
@@ -98,4 +96,7 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+        app:layout_constraintTop_toBottomOf="@+id/toolbar2" />
 </androidx.constraintlayout.widget.ConstraintLayout>
