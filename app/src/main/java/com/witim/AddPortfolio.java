@@ -26,6 +26,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -60,6 +61,7 @@ public class AddPortfolio extends DialogFragment {
         add2img = view.findViewById(R.id.add2img);
         add1img.setVisibility(View.INVISIBLE);
         add2img.setVisibility(View.INVISIBLE);
+        requestQueue = Volley.newRequestQueue(getActivity());
         add1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -164,14 +166,15 @@ public class AddPortfolio extends DialogFragment {
                                 JSONObject obj = hasil.getJSONObject(0);
                                 String msg = "";
                                 msg = obj.getString("msg");
-                                if (msg.equalsIgnoreCase("Success")) {
-
-                                    Toast.makeText(getActivity(), "Berhasil", Toast.LENGTH_SHORT).show();
-
-                                } else if (msg.equalsIgnoreCase("Failed")) {
-
-                                    Toast.makeText(getActivity(), "Gagal", Toast.LENGTH_SHORT).show();
-                                }
+//                                System.out.println("====================================="+msg);
+//                                if (msg.equalsIgnoreCase("Success")) {
+//
+//                                    Toast.makeText(getActivity(), "Berhasil", Toast.LENGTH_SHORT).show();
+//
+//                                } else if (msg.equalsIgnoreCase("Failed")) {
+//
+//                                    Toast.makeText(getActivity(), "Gagal", Toast.LENGTH_SHORT).show();
+//                                }
 
                             } catch (JSONException e) {
                                 e.printStackTrace();

@@ -1,18 +1,17 @@
 package com.witim;
 
-
+import android.Manifest;
 import android.animation.ArgbEvaluator;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.media.MediaScannerConnection;
 import android.net.Uri;
 import android.os.Bundle;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 import android.os.Environment;
 import android.os.Handler;
 import android.provider.MediaStore;
@@ -21,12 +20,10 @@ import android.util.Log;
 import android.widget.AdapterView;
 import android.widget.Button;
 
-=======
->>>>>>> parent of eb85119... NAME AND ROLE CHANGING YEAH
-=======
->>>>>>> parent of eb85119... NAME AND ROLE CHANGING YEAH
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
@@ -42,28 +39,42 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
-<<<<<<< HEAD
-<<<<<<< HEAD
 
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-=======
->>>>>>> parent of eb85119... NAME AND ROLE CHANGING YEAH
-=======
->>>>>>> parent of eb85119... NAME AND ROLE CHANGING YEAH
 import android.widget.Toast;
+import android.widget.Spinner;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.widget.ArrayAdapter;
+
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
+import static android.app.Activity.RESULT_OK;
 
 
 /**
  * A simple {@link Fragment} subclass.
  */
-<<<<<<< HEAD
-<<<<<<< HEAD
 public class FragmentProfile extends Fragment implements AdapterView.OnItemSelectedListener {
 
     ImageButton edit_btn, check_btn, cameraButton;
@@ -80,23 +91,11 @@ public class FragmentProfile extends Fragment implements AdapterView.OnItemSelec
     View dialogView;
     LayoutInflater dialog_inflater;
 
-    final int GALLERY=1,CAMERA=1, IMAGE_DIRECTORY=1, RESULT_CANCELED = 1;
+    final int GALLERY = 1, CAMERA = 2, IMAGE_DIRECTORY = 3, RESULT_CANCELED = 4, REQUEST_IMAGE_CAPTURE = 5;
     final static String TAG = "fragmentprofile";
 
     ProgressBar loading;
-=======
-public class FragmentProfile extends Fragment {
->>>>>>> parent of eb85119... NAME AND ROLE CHANGING YEAH
 
-=======
-public class FragmentProfile extends Fragment {
-
->>>>>>> parent of eb85119... NAME AND ROLE CHANGING YEAH
-    ViewPager viewPager;
-    Adapter adapter;
-    List<Model> models;
-    Integer[] colors = null;
-    ArgbEvaluator argbEvaluator = new ArgbEvaluator();
 
     public FragmentProfile() {
         // Required empty public constructor
@@ -106,8 +105,6 @@ public class FragmentProfile extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-<<<<<<< HEAD
-<<<<<<< HEAD
         // Inflate the layout for this fragment
         final View view = inflater.inflate(R.layout.fragment_profile, container, false);
         pp = view.findViewById(R.id.pp);
@@ -153,11 +150,11 @@ public class FragmentProfile extends Fragment {
                 editRole.setAdapter(adapter);
 
 //                editRole.setOnItemClickListener(this);
-                if (rolee.equalsIgnoreCase("hipster")){
+                if (rolee.equalsIgnoreCase("hipster")) {
                     editRole.setSelection(0);
-                }else if (rolee.equalsIgnoreCase("hacker")){
+                } else if (rolee.equalsIgnoreCase("hacker")) {
                     editRole.setSelection(1);
-                }else if (rolee.equalsIgnoreCase("hustler")){
+                } else if (rolee.equalsIgnoreCase("hustler")) {
                     editRole.setSelection(2);
                 }
 
@@ -178,11 +175,11 @@ public class FragmentProfile extends Fragment {
                 rolee = role.getText().toString().trim();
                 updateProfile();
                 name.setText(namee);
-                if(rolee.equalsIgnoreCase("hi")){
+                if (rolee.equalsIgnoreCase("hi")) {
                     rolee = "Hipster";
-                }else if(rolee.equalsIgnoreCase("ha")){
+                } else if (rolee.equalsIgnoreCase("ha")) {
                     rolee = "Hacker";
-                }else if(rolee.equalsIgnoreCase("hu")){
+                } else if (rolee.equalsIgnoreCase("hu")) {
                     rolee = "Hustler";
                 }
                 role.setText(rolee);
@@ -198,8 +195,6 @@ public class FragmentProfile extends Fragment {
             public void onClick(View view) {
                 AddPortfolio dialog = new AddPortfolio();
                 dialog.show(getFragmentManager(), "dialogaddport");
-
-
 
 
 //                addPortfolioDialog = new AlertDialog.Builder(getActivity()).create();
@@ -224,8 +219,6 @@ public class FragmentProfile extends Fragment {
 
             }
         });
-=======
->>>>>>> parent of eb85119... NAME AND ROLE CHANGING YEAH
 
         cameraButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -237,7 +230,7 @@ public class FragmentProfile extends Fragment {
                 dialog.setCancelable(true);
 
                 Button takephotoButton = dialogView.findViewById(R.id.takephotoButton);
-                Button choosefromgalleryButton  = dialogView.findViewById(R.id.choosefromgalleryBtn);
+                Button choosefromgalleryButton = dialogView.findViewById(R.id.choosefromgalleryBtn);
                 Button removePicButton = dialogView.findViewById(R.id.removePicButton);
                 takephotoButton.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -267,29 +260,32 @@ public class FragmentProfile extends Fragment {
         });
 
 
-
-
-=======
-
-
->>>>>>> parent of eb85119... NAME AND ROLE CHANGING YEAH
-        // Inflate the layout for this fragment
-        final View view = inflater.inflate(R.layout.fragment_profile, container, false);
         return view;
     }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
     public void choosePhotoFromGallery() {
         Intent galleryIntent = new Intent(Intent.ACTION_PICK,
-        android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
 
         startActivityForResult(galleryIntent, GALLERY);
     }
 
     private void takePhotoFromCamera() {
-        Intent intent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
-        startActivityForResult(intent, CAMERA);
+//        Intent intent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+//        startActivityForResult(intent, CAMERA);
+        if (ContextCompat.checkSelfPermission(getContext(), Manifest.permission.CAMERA) == PackageManager.PERMISSION_DENIED) {
+            ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.CAMERA}, REQUEST_IMAGE_CAPTURE);
+
+
+
+        }else{
+            Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+            if (takePictureIntent.resolveActivity(getActivity().getPackageManager()) != null) {
+                startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
+            }
+        }
+
+
     }
 
     public void removePic() {
@@ -321,19 +317,26 @@ public class FragmentProfile extends Fragment {
                 }
             }
 
-        } else if (requestCode == CAMERA) {
-            Bitmap thumbnail = (Bitmap) data.getExtras().get("data");
-            pp.setImageBitmap(thumbnail);
-            saveImage(thumbnail);
-            Toast.makeText(getActivity(), "Image Saved!", Toast.LENGTH_SHORT).show();
         }
+        if (requestCode == REQUEST_IMAGE_CAPTURE) {
+
+            Bitmap imageBitmap = (Bitmap) data.getExtras().get("data");
+            pp.setImageBitmap(imageBitmap);
+        }
+        //if (requestCode == CAMERA) {
+
+//            Bitmap thumbnail = (Bitmap) data.getExtras().get("data");
+//            pp.setImageBitmap(thumbnail);
+//            saveImage(thumbnail);
+//            Toast.makeText(getActivity(), "Image Saved!", Toast.LENGTH_SHORT).show();
+//    }
     }
 
     public String saveImage(Bitmap myBitmap) {
         ByteArrayOutputStream bytes = new ByteArrayOutputStream();
         myBitmap.compress(Bitmap.CompressFormat.JPEG, 90, bytes);
         File wallpaperDirectory = new File(
-                Environment.getExternalStorageDirectory() + "" +IMAGE_DIRECTORY);
+                Environment.getExternalStorageDirectory() + "" + IMAGE_DIRECTORY);
         // have the object build the directory structure, if needed.
         if (!wallpaperDirectory.exists()) {
             wallpaperDirectory.mkdirs();
@@ -357,7 +360,6 @@ public class FragmentProfile extends Fragment {
         }
         return "";
     }
-
 
 
     public void loadProfile() {
@@ -385,11 +387,11 @@ public class FragmentProfile extends Fragment {
                                 rolee = obj.getString("role");
                                 loading.setVisibility(View.INVISIBLE);
                                 name.setText(namee);
-                                if (rolee.equalsIgnoreCase("Hipster")){
+                                if (rolee.equalsIgnoreCase("Hipster")) {
                                     role.setText("Hipster");
-                                }else if (rolee.equalsIgnoreCase("Hacker")){
+                                } else if (rolee.equalsIgnoreCase("Hacker")) {
                                     role.setText("Hacker");
-                                }else if (rolee.equalsIgnoreCase("Hustler")){
+                                } else if (rolee.equalsIgnoreCase("Hustler")) {
                                     role.setText("Hustler");
                                 }
 
@@ -416,11 +418,11 @@ public class FragmentProfile extends Fragment {
         String url = "https://witim.000webhostapp.com/webservice/updateProfile.php";
         Map<String, String> params = new HashMap<>();
         params.put("name", namee);
-        if (editRole.getSelectedItem().toString().equalsIgnoreCase("Hipster")){
+        if (editRole.getSelectedItem().toString().equalsIgnoreCase("Hipster")) {
             rolee = "hi";
-        }else if (editRole.getSelectedItem().toString().equalsIgnoreCase("Hacker")){
+        } else if (editRole.getSelectedItem().toString().equalsIgnoreCase("Hacker")) {
             rolee = "ha";
-        }else if (editRole.getSelectedItem().toString().equalsIgnoreCase("Hustler")){
+        } else if (editRole.getSelectedItem().toString().equalsIgnoreCase("Hustler")) {
             rolee = "hu";
         }
         params.put("role_id", rolee);
@@ -446,7 +448,7 @@ public class FragmentProfile extends Fragment {
                                 msg = obj.getString("msg");
 
                                 if (msg.equalsIgnoreCase("success")) {
-                                    Toast.makeText(getActivity(), "role : "+rolee, Toast.LENGTH_SHORT).show();
+                                    //Toast.makeText(getActivity(), "role : " + rolee, Toast.LENGTH_SHORT).show();
 
                                 } else if (msg.equalsIgnoreCase("failed")) {
 
@@ -475,7 +477,6 @@ public class FragmentProfile extends Fragment {
     }
 
 
-
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
         String text = adapterView.getItemAtPosition(i).toString();
@@ -486,10 +487,4 @@ public class FragmentProfile extends Fragment {
     public void onNothingSelected(AdapterView<?> adapterView) {
 
     }
-=======
-
->>>>>>> parent of eb85119... NAME AND ROLE CHANGING YEAH
-=======
-
->>>>>>> parent of eb85119... NAME AND ROLE CHANGING YEAH
 }
