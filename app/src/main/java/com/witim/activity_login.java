@@ -2,6 +2,7 @@ package com.witim;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -78,7 +79,8 @@ btn_login.setOnClickListener(new View.OnClickListener() {
                                     String email = object.getString("email").trim();
 
                                     Toast.makeText(activity_login.this, "Welcome Back " + name, Toast.LENGTH_SHORT).show();
-
+                                    Intent mainActivity = new Intent(getApplicationContext(),MainActivity.class);
+                                    startActivity(mainActivity);
                                 }
 
                             }
@@ -86,7 +88,8 @@ btn_login.setOnClickListener(new View.OnClickListener() {
                         }catch (JSONException e){
                             e.printStackTrace();
                             Toast.makeText(activity_login.this, "Error", Toast.LENGTH_SHORT).show();
-
+                            pgBar.setVisibility(View.INVISIBLE);
+                            btn_login.setVisibility(View.VISIBLE);
                         }
 
                     }
@@ -95,7 +98,8 @@ btn_login.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         Toast.makeText(activity_login.this, "Error", Toast.LENGTH_SHORT).show();
-
+                        pgBar.setVisibility(View.INVISIBLE);
+                        btn_login.setVisibility(View.VISIBLE);
                     }
                 })
         {

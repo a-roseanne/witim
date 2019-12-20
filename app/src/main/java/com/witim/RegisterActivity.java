@@ -3,8 +3,10 @@ package com.witim;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -79,10 +81,13 @@ public class RegisterActivity extends AppCompatActivity {
                         String success = jsonObject.getString("success");
                         if(success.equals("1")){
                             Toast.makeText(RegisterActivity.this, "Register Success!", Toast.LENGTH_SHORT).show();
+                            Intent mainActivity = new Intent(getApplicationContext(),MainActivity.class);
+                            startActivity(mainActivity);
                         }
 
                     }catch (JSONException e){
                         e.printStackTrace();
+                        Log.e("anyText",response);
                         Toast.makeText(RegisterActivity.this, "Register Failed! " + e.toString(), Toast.LENGTH_SHORT).show();
                         pgBar.setVisibility(View.INVISIBLE);
                         btn_reg.setVisibility(View.VISIBLE);
@@ -92,6 +97,7 @@ public class RegisterActivity extends AppCompatActivity {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
+
                         Toast.makeText(RegisterActivity.this, "Register Failed! " + error.toString(), Toast.LENGTH_SHORT).show();
                         pgBar.setVisibility(View.INVISIBLE);
                         btn_reg.setVisibility(View.VISIBLE);
